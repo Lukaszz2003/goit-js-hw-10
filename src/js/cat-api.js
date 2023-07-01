@@ -32,3 +32,41 @@ function fetchBreeds() {
       noElement(loader);
     });
 }
+
+function renderBreedsList(breeds) {
+  const myOptions = breeds.map(breeds => {
+    return {
+      text: breed.name,
+      value: breeds.id,
+    };
+  });
+
+  opitons.unshift({
+    text: 'Select breed',
+    value: '',
+    'data-placeholder': true,
+  });
+
+  new SlimSelect({
+    select: 'Select breed',
+    data: options,
+    settings: {
+      showSearch: false,
+    },
+  });
+
+  addStyles();
+}
+
+fetchBreeds()
+  .then(breeds => {
+    renderBreedsList(breeds);
+    yesElement(element);
+  })
+  .catch(error => {
+    console.log(error);
+    noElement(element);
+    Notiflix.Notify.failure(
+      'Oops! Something went wrong! Try reloading the page!'
+    );
+  });
