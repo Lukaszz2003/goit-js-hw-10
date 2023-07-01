@@ -1,0 +1,26 @@
+body {
+  background-color: $bgColor;
+  font-family: $fontFamily;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.hidden {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  //   width: 0;
+  //   height: 0;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: $fontHeading;
+  font-weight: 400;
+  font-size: 20px;
+}
