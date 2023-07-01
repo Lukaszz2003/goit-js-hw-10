@@ -1,5 +1,5 @@
 import { Report } from 'notiflix/build/notiflix-report-aio';
-import { fetchCatByBreed, fetchBreeds } from '../src/cat-api';
+import { fetchCatByBreed, fetchBreeds } from './cat-api';
 
 const selectEl = document.querySelector('.breed-select');
 const catInfoEl = document.querySelector('.cat-info');
