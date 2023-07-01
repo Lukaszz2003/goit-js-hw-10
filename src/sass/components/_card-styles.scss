@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  // width: 50%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: $borderRadius;
+  margin: 10px;
+  box-shadow: $boxShadow;
+}
+
+&__image {
+  display: block;
+  width: 100%;
+  align-self: flex-start;
+  border-radius: $borderRadius;
+}
+
+&__content {
+  flex-direction: column;
+}
+
+&__heading {
+  font-family: $fontHeading;
+  color: $primaryColor;
+  margin-bottom: 10px;
+}
+
+&__description {
+  margin-bottom: 20px;
+}
+
+&__text {
+  border: $primaryColor 3px dashed;
+  border-radius: $borderRadius;
+  padding: 5px;
+}
