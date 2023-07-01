@@ -9,3 +9,26 @@ axios.defaults.headers.common['x-api-key'] =
 const element = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
+
+function fetchBreeds() {
+  yesElement(loader);
+  return axios
+    .get('https://api.thecatapi.com/v1/breeds')
+    .then(response => {
+      if (response.status !== 200) {
+        throw new Error(response.status);
+      }
+      return response.data;
+    })
+
+    .catch(error => {
+      console.log(error);
+      noElement(element);
+      Notiflix.Notify.failure(
+        'Oops! Something went wrong! Try reloading the page!'
+      );
+    })
+    .finally(() => {
+      noElement(loader);
+    });
+}
